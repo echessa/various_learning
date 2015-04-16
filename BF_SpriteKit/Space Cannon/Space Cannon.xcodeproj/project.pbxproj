@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FB47ED31ADFA244001B25DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED21ADFA244001B25DB /* Foundation.framework */; };
+		5FB47ED51ADFA244001B25DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED41ADFA244001B25DB /* CoreGraphics.framework */; };
+		5FB47ED71ADFA244001B25DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED61ADFA244001B25DB /* UIKit.framework */; };
+		5FB47ED91ADFA244001B25DB /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED81ADFA244001B25DB /* SpriteKit.framework */; };
+		5FB47EDF1ADFA245001B25DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FB47EDD1ADFA245001B25DB /* InfoPlist.strings */; };
+		5FB47EE11ADFA245001B25DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB47EE01ADFA245001B25DB /* main.m */; };
+		5FB47EE51ADFA245001B25DB /* JKEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB47EE41ADFA245001B25DB /* JKEAppDelegate.m */; };
+		5FB47EE81ADFA245001B25DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB47EE61ADFA245001B25DB /* Main.storyboard */; };
+		5FB47EEB1ADFA245001B25DB /* JKEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB47EEA1ADFA245001B25DB /* JKEViewController.m */; };
+		5FB47EEE1ADFA245001B25DB /* JKEMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB47EED1ADFA245001B25DB /* JKEMyScene.m */; };
+		5FB47EF01ADFA245001B25DB /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB47EEF1ADFA245001B25DB /* Spaceship.png */; };
+		5FB47EF21ADFA245001B25DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB47EF11ADFA245001B25DB /* Images.xcassets */; };
+		5FB47EF91ADFA245001B25DB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47EF81ADFA245001B25DB /* XCTest.framework */; };
+		5FB47EFA1ADFA245001B25DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED21ADFA244001B25DB /* Foundation.framework */; };
+		5FB47EFB1ADFA245001B25DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB47ED61ADFA244001B25DB /* UIKit.framework */; };
+		5FB47F031ADFA245001B25DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FB47F011ADFA245001B25DB /* InfoPlist.strings */; };
+		5FB47F051ADFA245001B25DB /* Space_CannonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB47F041ADFA245001B25DB /* Space_CannonTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FB47EFC1ADFA245001B25DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FB47EC71ADFA244001B25DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FB47ECE1ADFA244001B25DB;
+			remoteInfo = "Space Cannon";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5FB47ECF1ADFA244001B25DB /* Space Cannon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cannon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB47ED21ADFA244001B25DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5FB47ED41ADFA244001B25DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5FB47ED61ADFA244001B25DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5FB47ED81ADFA244001B25DB /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		5FB47EDC1ADFA245001B25DB /* Space Cannon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Cannon-Info.plist"; sourceTree = "<group>"; };
+		5FB47EDE1ADFA245001B25DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FB47EE01ADFA245001B25DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FB47EE21ADFA245001B25DB /* Space Cannon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Space Cannon-Prefix.pch"; sourceTree = "<group>"; };
+		5FB47EE31ADFA245001B25DB /* JKEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKEAppDelegate.h; sourceTree = "<group>"; };
+		5FB47EE41ADFA245001B25DB /* JKEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKEAppDelegate.m; sourceTree = "<group>"; };
+		5FB47EE71ADFA245001B25DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5FB47EE91ADFA245001B25DB /* JKEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKEViewController.h; sourceTree = "<group>"; };
+		5FB47EEA1ADFA245001B25DB /* JKEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKEViewController.m; sourceTree = "<group>"; };
+		5FB47EEC1ADFA245001B25DB /* JKEMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKEMyScene.h; sourceTree = "<group>"; };
+		5FB47EED1ADFA245001B25DB /* JKEMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKEMyScene.m; sourceTree = "<group>"; };
+		5FB47EEF1ADFA245001B25DB /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		5FB47EF11ADFA245001B25DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FB47EF71ADFA245001B25DB /* Space CannonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space CannonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB47EF81ADFA245001B25DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5FB47F001ADFA245001B25DB /* Space CannonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space CannonTests-Info.plist"; sourceTree = "<group>"; };
+		5FB47F021ADFA245001B25DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FB47F041ADFA245001B25DB /* Space_CannonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_CannonTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FB47ECC1ADFA244001B25DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47ED51ADFA244001B25DB /* CoreGraphics.framework in Frameworks */,
+				5FB47ED71ADFA244001B25DB /* UIKit.framework in Frameworks */,
+				5FB47ED91ADFA244001B25DB /* SpriteKit.framework in Frameworks */,
+				5FB47ED31ADFA244001B25DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB47EF41ADFA245001B25DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47EF91ADFA245001B25DB /* XCTest.framework in Frameworks */,
+				5FB47EFB1ADFA245001B25DB /* UIKit.framework in Frameworks */,
+				5FB47EFA1ADFA245001B25DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5FB47EC61ADFA244001B25DB = {
+			isa = PBXGroup;
+			children = (
+				5FB47EDA1ADFA244001B25DB /* Space Cannon */,
+				5FB47EFE1ADFA245001B25DB /* Space CannonTests */,
+				5FB47ED11ADFA244001B25DB /* Frameworks */,
+				5FB47ED01ADFA244001B25DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FB47ED01ADFA244001B25DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47ECF1ADFA244001B25DB /* Space Cannon.app */,
+				5FB47EF71ADFA245001B25DB /* Space CannonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FB47ED11ADFA244001B25DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47ED21ADFA244001B25DB /* Foundation.framework */,
+				5FB47ED41ADFA244001B25DB /* CoreGraphics.framework */,
+				5FB47ED61ADFA244001B25DB /* UIKit.framework */,
+				5FB47ED81ADFA244001B25DB /* SpriteKit.framework */,
+				5FB47EF81ADFA245001B25DB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FB47EDA1ADFA244001B25DB /* Space Cannon */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47EE31ADFA245001B25DB /* JKEAppDelegate.h */,
+				5FB47EE41ADFA245001B25DB /* JKEAppDelegate.m */,
+				5FB47EE61ADFA245001B25DB /* Main.storyboard */,
+				5FB47EE91ADFA245001B25DB /* JKEViewController.h */,
+				5FB47EEA1ADFA245001B25DB /* JKEViewController.m */,
+				5FB47EEC1ADFA245001B25DB /* JKEMyScene.h */,
+				5FB47EED1ADFA245001B25DB /* JKEMyScene.m */,
+				5FB47EEF1ADFA245001B25DB /* Spaceship.png */,
+				5FB47EF11ADFA245001B25DB /* Images.xcassets */,
+				5FB47EDB1ADFA244001B25DB /* Supporting Files */,
+			);
+			path = "Space Cannon";
+			sourceTree = "<group>";
+		};
+		5FB47EDB1ADFA244001B25DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47EDC1ADFA245001B25DB /* Space Cannon-Info.plist */,
+				5FB47EDD1ADFA245001B25DB /* InfoPlist.strings */,
+				5FB47EE01ADFA245001B25DB /* main.m */,
+				5FB47EE21ADFA245001B25DB /* Space Cannon-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FB47EFE1ADFA245001B25DB /* Space CannonTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47F041ADFA245001B25DB /* Space_CannonTests.m */,
+				5FB47EFF1ADFA245001B25DB /* Supporting Files */,
+			);
+			path = "Space CannonTests";
+			sourceTree = "<group>";
+		};
+		5FB47EFF1ADFA245001B25DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FB47F001ADFA245001B25DB /* Space CannonTests-Info.plist */,
+				5FB47F011ADFA245001B25DB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FB47ECE1ADFA244001B25DB /* Space Cannon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FB47F081ADFA245001B25DB /* Build configuration list for PBXNativeTarget "Space Cannon" */;
+			buildPhases = (
+				5FB47ECB1ADFA244001B25DB /* Sources */,
+				5FB47ECC1ADFA244001B25DB /* Frameworks */,
+				5FB47ECD1ADFA244001B25DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Cannon";
+			productName = "Space Cannon";
+			productReference = 5FB47ECF1ADFA244001B25DB /* Space Cannon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FB47EF61ADFA245001B25DB /* Space CannonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FB47F0B1ADFA245001B25DB /* Build configuration list for PBXNativeTarget "Space CannonTests" */;
+			buildPhases = (
+				5FB47EF31ADFA245001B25DB /* Sources */,
+				5FB47EF41ADFA245001B25DB /* Frameworks */,
+				5FB47EF51ADFA245001B25DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FB47EFD1ADFA245001B25DB /* PBXTargetDependency */,
+			);
+			name = "Space CannonTests";
+			productName = "Space CannonTests";
+			productReference = 5FB47EF71ADFA245001B25DB /* Space CannonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FB47EC71ADFA244001B25DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JKE;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Echessa;
+				TargetAttributes = {
+					5FB47EF61ADFA245001B25DB = {
+						TestTargetID = 5FB47ECE1ADFA244001B25DB;
+					};
+				};
+			};
+			buildConfigurationList = 5FB47ECA1ADFA244001B25DB /* Build configuration list for PBXProject "Space Cannon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FB47EC61ADFA244001B25DB;
+			productRefGroup = 5FB47ED01ADFA244001B25DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FB47ECE1ADFA244001B25DB /* Space Cannon */,
+				5FB47EF61ADFA245001B25DB /* Space CannonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FB47ECD1ADFA244001B25DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47EDF1ADFA245001B25DB /* InfoPlist.strings in Resources */,
+				5FB47EF21ADFA245001B25DB /* Images.xcassets in Resources */,
+				5FB47EF01ADFA245001B25DB /* Spaceship.png in Resources */,
+				5FB47EE81ADFA245001B25DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB47EF51ADFA245001B25DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47F031ADFA245001B25DB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FB47ECB1ADFA244001B25DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47EE11ADFA245001B25DB /* main.m in Sources */,
+				5FB47EEE1ADFA245001B25DB /* JKEMyScene.m in Sources */,
+				5FB47EEB1ADFA245001B25DB /* JKEViewController.m in Sources */,
+				5FB47EE51ADFA245001B25DB /* JKEAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FB47EF31ADFA245001B25DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FB47F051ADFA245001B25DB /* Space_CannonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FB47EFD1ADFA245001B25DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FB47ECE1ADFA244001B25DB /* Space Cannon */;
+			targetProxy = 5FB47EFC1ADFA245001B25DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FB47EDD1ADFA245001B25DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FB47EDE1ADFA245001B25DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FB47EE61ADFA245001B25DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FB47EE71ADFA245001B25DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5FB47F011ADFA245001B25DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FB47F021ADFA245001B25DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FB47F061ADFA245001B25DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5FB47F071ADFA245001B25DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FB47F091ADFA245001B25DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cannon/Space Cannon-Prefix.pch";
+				INFOPLIST_FILE = "Space Cannon/Space Cannon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FB47F0A1ADFA245001B25DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cannon/Space Cannon-Prefix.pch";
+				INFOPLIST_FILE = "Space Cannon/Space Cannon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FB47F0C1ADFA245001B25DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Cannon.app/Space Cannon";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cannon/Space Cannon-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space CannonTests/Space CannonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5FB47F0D1ADFA245001B25DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Cannon.app/Space Cannon";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cannon/Space Cannon-Prefix.pch";
+				INFOPLIST_FILE = "Space CannonTests/Space CannonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FB47ECA1ADFA244001B25DB /* Build configuration list for PBXProject "Space Cannon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FB47F061ADFA245001B25DB /* Debug */,
+				5FB47F071ADFA245001B25DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FB47F081ADFA245001B25DB /* Build configuration list for PBXNativeTarget "Space Cannon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FB47F091ADFA245001B25DB /* Debug */,
+				5FB47F0A1ADFA245001B25DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FB47F0B1ADFA245001B25DB /* Build configuration list for PBXNativeTarget "Space CannonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FB47F0C1ADFA245001B25DB /* Debug */,
+				5FB47F0D1ADFA245001B25DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FB47EC71ADFA244001B25DB /* Project object */;
+}
