@@ -59,6 +59,7 @@ static inline CGVector radiansToVector(CGFloat radians)
 -(void)shoot
 {
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"Ball"];
+    ball.name = @"ball";
     CGVector rotationVector = radiansToVector(_cannon.zRotation);
     ball.position = CGPointMake(_cannon.position.x + (_cannon.size.width * 0.5 * rotationVector.dx),
                                 _cannon.position.y + (_cannon.size.width * 0.5 * rotationVector.dy));
@@ -74,6 +75,15 @@ static inline CGVector radiansToVector(CGFloat radians)
     for (UITouch *touch in touches) {
         [self shoot];
     }
+}
+
+-(void)didSimulatePhysics
+{
+    [_mainLayer enumerateChildNodesWithName:@"ball" usingBlock:^(SKNode *node, BOOL *stop) {
+        if (!CGRectContainsPoint(self.frame, node.position)) {
+            [node removeFromParent];
+        }
+    }];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
