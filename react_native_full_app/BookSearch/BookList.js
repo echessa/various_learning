@@ -20,10 +20,12 @@ var {
     Text,
     View,
     Component,
+    ListView,
+    TouchableHighlight
     } = React;
 
 var styles = StyleSheet.create({
-    container: {
+    cellContainer: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
@@ -45,25 +47,61 @@ var styles = StyleSheet.create({
     },
     author: {
         color: '#656565'
-    }
+    },
+    separator: {
+        height: 1,
+        backgroundColor: '#dddddd'
+    },
 });
 
 class BookList extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSource: new ListView.DataSource({
+                rowHasChanged: (row1, row2) => row1 !== row2
+            })
+        };
+    }
+
+    componentDidMount() {
+    var books = FAKE_BOOK_DATA;
+    this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(books)
+    });
+    }
+
     render() {
     var book = FAKE_BOOK_DATA[0];
     return (
-        <View style={styles.container}>
-            <Image
-            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
-            style={styles.thumbnail}
-            />
-            <View style={styles.rightContainer}>
-                <Text style={styles.title}>{book.volumeInfo.title}</Text>
-                <Text style={styles.author}>{book.volumeInfo.authors}</Text>
-            </View>
-        </View>
+        <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderBook}
+            style={styles.listView}
+        />
+       );
+    }
+
+    renderBook(book) {
+        return (
+            <TouchableHighlight underlayColor='#dddddd'>
+                <View>
+                    <View style={styles.cellContainer}>
+                        <Image
+                            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                        style={styles.thumbnail} />
+                        <View style={styles.rightContainer}>
+                            <Text style={styles.title}>{book.volumeInfo.title}</Text>
+                            <Text style={styles.author}>{book.volumeInfo.authors}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.separator} />
+                </View>
+            </TouchableHighlight>
         );
-}
+    }
+
 }
 
 module.exports = BookList;
