@@ -29,21 +29,22 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+        padding: 10
     },
     thumbnail: {
         width: 53,
         height: 81,
+        marginRight: 10
     },
     rightContainer: {
-        flex: 1,
+        flex: 1
     },
     title: {
         fontSize: 20,
-        marginBottom: 8,
-        textAlign: 'center',
+        marginBottom: 8
     },
-    year: {
-        textAlign: 'center',
+    author: {
+        color: '#656565'
     }
 });
 
@@ -58,7 +59,7 @@ class Featured extends Component {
             />
             <View style={styles.rightContainer}>
                 <Text style={styles.title}>{book.volumeInfo.title}</Text>
-                <Text style={styles.year}>{book.volumeInfo.authors}</Text>
+                <Text style={styles.author}>{book.volumeInfo.authors}</Text>
             </View>
         </View>
         );
