@@ -14,7 +14,13 @@ var styles = React.StyleSheet.create({
 
 class BookDetail extends React.Component {
     render() {
-        return ();
+    return (
+        <View style={styles.container}>
+            <Text style={styles.description}>
+            Book Detail
+            </Text>
+        </View>
+        );
     }
 }
 

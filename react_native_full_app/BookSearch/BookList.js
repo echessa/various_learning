@@ -4,9 +4,10 @@
 
 'use strict';
 
-var REQUEST_URL = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction';
-
 var React = require('react-native');
+var REQUEST_URL = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction';
+var BookDetail = require('./BookDetail');
+
 var {
     AppRegistry,
     Image,
@@ -102,20 +103,10 @@ class BookList extends Component {
 
     renderBook(book) {
         return (
-            <TouchableHighlight underlayColor='#dddddd'>
-                <View>
-                    <View style={styles.cellContainer}>
-                        <Image
-                            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
-                        style={styles.thumbnail} />
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.title}>{book.volumeInfo.title}</Text>
-                            <Text style={styles.author}>{book.volumeInfo.authors}</Text>
-                        </View>
-                    </View>
-                    <View style={styles.separator} />
-                </View>
-            </TouchableHighlight>
+            <BookCell
+            onSelect={() => this.selectBook(book)}
+            book={book}
+            />
         );
     }
 
@@ -131,6 +122,38 @@ class BookList extends Component {
         );
     }
 
+selectBook() {
+
+    console.log("IN BKDETAIL");
+//        this.props.navigator.push({
+//            title: book.volumeInfo.title,
+//            component: BookDetail,
+//            passProps: {book}
+//        });
+    }
+
+}
+
+class BookCell extends Component {
+    render() {
+    return (
+        <TouchableHighlight onPress={this.props.onSelect}
+        underlayColor='#dddddd'>
+            <View>
+                <View style={styles.cellContainer}>
+                    <Image
+                    source={{uri: this.props.book.volumeInfo.imageLinks.thumbnail}}
+                    style={styles.thumbnail} />
+                    <View style={styles.rightContainer}>
+                        <Text style={styles.title}>{this.props.book.volumeInfo.title}</Text>
+                        <Text style={styles.author}>{this.props.book.volumeInfo.authors}</Text>
+                    </View>
+                </View>
+                <View style={styles.separator} />
+            </View>
+        </TouchableHighlight>
+        );
+}
 }
 
 module.exports = BookList;
