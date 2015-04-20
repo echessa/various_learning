@@ -102,11 +102,23 @@ class BookList extends Component {
     }
 
     renderBook(book) {
+    console.log(this);
         return (
-            <BookCell
-            onSelect={() => this.selectBook(book)}
-            book={book}
-            />
+            <TouchableHighlight onPress={() => this.showBookDetail()}
+            underlayColor='#dddddd'>
+                <View>
+                    <View style={styles.cellContainer}>
+                        <Image
+                            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                        style={styles.thumbnail} />
+                        <View style={styles.rightContainer}>
+                            <Text style={styles.title}>{book.volumeInfo.title}</Text>
+                            <Text style={styles.author}>{book.volumeInfo.authors}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.separator} />
+                </View>
+            </TouchableHighlight>
         );
     }
 
@@ -122,7 +134,7 @@ class BookList extends Component {
         );
     }
 
-selectBook() {
+    showBookDetail() {
 
     console.log("IN BKDETAIL");
 //        this.props.navigator.push({
@@ -132,28 +144,6 @@ selectBook() {
 //        });
     }
 
-}
-
-class BookCell extends Component {
-    render() {
-    return (
-        <TouchableHighlight onPress={this.props.onSelect}
-        underlayColor='#dddddd'>
-            <View>
-                <View style={styles.cellContainer}>
-                    <Image
-                    source={{uri: this.props.book.volumeInfo.imageLinks.thumbnail}}
-                    style={styles.thumbnail} />
-                    <View style={styles.rightContainer}>
-                        <Text style={styles.title}>{this.props.book.volumeInfo.title}</Text>
-                        <Text style={styles.author}>{this.props.book.volumeInfo.authors}</Text>
-                    </View>
-                </View>
-                <View style={styles.separator} />
-            </View>
-        </TouchableHighlight>
-        );
-}
 }
 
 module.exports = BookList;
