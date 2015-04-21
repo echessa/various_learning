@@ -6,19 +6,36 @@
 
 var React = require('react-native');
 
-var styles = React.StyleSheet.create({
+var {
+    StyleSheet,
+    Text,
+    View,
+    Component,
+    Image
+    } = React;
+
+var styles = StyleSheet.create({
     container: {
-        flex: 1
+        marginTop: 75,
+        alignItems: 'center'
+    },
+    image: {
+        width: 107,
+        height: 165,
+        padding: 10
+    },
+    description: {
+        padding: 10
     }
 });
 
-class BookDetail extends React.Component {
+class BookDetail extends Component {
     render() {
+    var book = this.props.book;
     return (
         <View style={styles.container}>
-            <Text style={styles.description}>
-            Book Detail
-            </Text>
+            <Image style={styles.image} source={{uri: book.volumeInfo.imageLinks.thumbnail}} />
+            <Text style={styles.description}>{book.volumeInfo.description}</Text>
         </View>
         );
     }

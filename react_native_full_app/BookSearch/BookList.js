@@ -95,7 +95,7 @@ class BookList extends Component {
     return (
         <ListView
             dataSource={this.state.dataSource}
-            renderRow={this.renderBook}
+            renderRow={this.renderBook.bind(this)}
             style={styles.listView}
         />
        );
@@ -104,7 +104,7 @@ class BookList extends Component {
     renderBook(book) {
     console.log(this);
         return (
-            <TouchableHighlight onPress={() => this.showBookDetail()}
+            <TouchableHighlight onPress={() => this.showBookDetail(book)}
             underlayColor='#dddddd'>
                 <View>
                     <View style={styles.cellContainer}>
@@ -134,14 +134,13 @@ class BookList extends Component {
         );
     }
 
-    showBookDetail() {
+    showBookDetail(book) {
 
-    console.log("IN BKDETAIL");
-//        this.props.navigator.push({
-//            title: book.volumeInfo.title,
-//            component: BookDetail,
-//            passProps: {book}
-//        });
+        this.props.navigator.push({
+            title: book.volumeInfo.title,
+            component: BookDetail,
+            passProps: {book}
+        });
     }
 
 }
