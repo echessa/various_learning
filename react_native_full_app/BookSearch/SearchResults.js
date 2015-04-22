@@ -78,13 +78,15 @@ render() {
 }
 
 renderBook(book) {
+    var imageURI = (typeof book.volumeInfo.imageLinks !== 'undefined') ? book.volumeInfo.imageLinks.thumbnail : '';
+
     return (
         <TouchableHighlight onPress={() => this.showBookDetail(book)}
         underlayColor='#dddddd'>
             <View>
                 <View style={styles.cellContainer}>
                     <Image
-                    source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                    source={{uri: imageURI}}
                     style={styles.thumbnail} />
                     <View style={styles.rightContainer}>
                         <Text style={styles.title}>{book.volumeInfo.title}</Text>

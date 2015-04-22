@@ -19,50 +19,44 @@ var {
 var styles = StyleSheet.create({
     container: {
         marginTop: 65,
-        padding: 10,
-        alignItems: 'center'
+        padding: 10
     },
     searchInput: {
-//        height: 36,
-//        padding: 4,
-//        flex: 1,
-//        fontSize: 18,
-//        borderWidth: 1,
-//        borderColor: '#48BBEC',
-//        borderRadius: 8,
-//        color: '#48BBEC',
-//        alignSelf: 'stretch',
         height: 36,
-        padding: 4,
-        margin: 24,
+        marginTop: 10,
+        marginBottom: 10,
         fontSize: 18,
         borderWidth: 1,
-        flex: 1
+        flex: 1,
+        borderRadius: 4,
+        padding: 5
     },
     button: {
         height: 36,
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: '#48BBEC',
-        borderColor: '#48BBEC',
-        borderWidth: 1,
+        backgroundColor: '#f39c12',
         borderRadius: 8,
-        marginBottom: 10,
-        alignSelf: 'stretch',
-        justifyContent: 'center'
-//        height: 36,
-//        backgroundColor: '#48BBEC',
-//        borderColor: '#48BBEC',
-//        borderWidth: 1,
-//        borderRadius: 8,
-//        marginBottom: 10,
-//        alignSelf: 'stretch',
-//        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 15
     },
     buttonText: {
         fontSize: 18,
         color: 'white',
         alignSelf: 'center'
+    },
+    instructions: {
+        fontSize: 18,
+        alignSelf: 'center',
+        marginBottom: 15
+    },
+    fieldLabel: {
+        fontSize: 15,
+        marginTop: 15
+    },
+    errorMessage: {
+        fontSize: 15,
+        alignSelf: 'center',
+        marginTop: 15,
+        color: 'red'
     }
 });
 
@@ -87,22 +81,22 @@ class SearchBooks extends Component {
         ( <View/>);
     return (
         <View style={styles.container}>
-            <Text>Search by book title and/or author</Text>
+            <Text style={styles.instructions}>Search by book title and/or author</Text>
             <View>
-                <Text>Book Title:</Text>
+                <Text style={styles.fieldLabel}>Book Title:</Text>
                 <TextInput style={styles.searchInput} onChange={this.bookTitleInput.bind(this)}/>
             </View>
             <View>
-                <Text>Author:</Text>
+                <Text style={styles.fieldLabel}>Author:</Text>
                 <TextInput style={styles.searchInput} onChange={this.bookAuthorInput.bind(this)}/>
             </View>
             <TouchableHighlight style={styles.button}
-                underlayColor='#99d9f4'
+                underlayColor='#f1c40f'
                 onPress={this.searchBooks.bind(this)}>
                 <Text style={styles.buttonText}>Search</Text>
             </TouchableHighlight>
             {spinner}
-            <Text>{this.state.errorMessage}</Text>
+            <Text style={styles.errorMessage}>{this.state.errorMessage}</Text>
         </View>
         );
 }
