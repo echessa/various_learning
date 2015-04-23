@@ -63,7 +63,7 @@ class BookList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false,
+            isLoading: true,
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
@@ -81,14 +81,14 @@ class BookList extends Component {
         .then((responseData) => {
             this.setState({
                 dataSource: this.state.dataSource.cloneWithRows(responseData.items),
-                isLoading: true,
+                isLoading: false,
             });
         })
         .done();
     }
 
     render() {
-        if (!this.state.isLoading) {
+        if (this.state.isLoading) {
             return this.renderLoadingView();
         }
 
