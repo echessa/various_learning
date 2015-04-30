@@ -15,6 +15,9 @@
         android:layout_height="wrap_content"/>
 
     <CheckBox
+        android:id="@+id/task_item_done"
+        android:enabled="false"
+        android:focusable="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
