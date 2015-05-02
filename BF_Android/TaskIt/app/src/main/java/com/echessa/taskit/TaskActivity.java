@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.text.DateFormat;
+
 
 public class TaskActivity extends ActionBarActivity {
 
@@ -32,7 +34,8 @@ public class TaskActivity extends ActionBarActivity {
         if (task.getDueDate() == null) {
             dateButton.setText(getResources().getString(R.string.no_date));
         } else {
-            dateButton.setText(task.getDueDate().toString());
+            DateFormat df = DateFormat.getDateInstance();
+            dateButton.setText(df.format(task.getDueDate()));
         }
         doneBox.setChecked(task.isDone());
 
