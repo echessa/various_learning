@@ -1,8 +1,8 @@
 package com.echessa.taskit;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +37,10 @@ public class TaskListActivity extends ActionBarActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d(TAG, "Position clicked is " + position);
-
+                Intent i = new Intent(TaskListActivity.this, TaskActivity.class);
+                Task task = (Task)parent.getAdapter().getItem(position);
+                i.putExtra(TaskActivity.EXTRA, task);
+                startActivity(i);
             }
         });
 
