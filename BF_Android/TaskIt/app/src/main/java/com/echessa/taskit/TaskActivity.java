@@ -1,9 +1,9 @@
 package com.echessa.taskit;
 
 import android.app.DatePickerDialog;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +24,8 @@ public class TaskActivity extends ActionBarActivity {
     private Calendar mCal;
     private Task mTask;
     private Button mDateButton;
+    private EditText mTaskNameInput;
+    private CheckBox mDoneBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +39,18 @@ public class TaskActivity extends ActionBarActivity {
             mCal.setTime(mTask.getDueDate());
         }
 
-        EditText taskNameInput = (EditText)findViewById(R.id.task_name);
+        mTaskNameInput = (EditText)findViewById(R.id.task_name);
         mDateButton = (Button)findViewById(R.id.task_date);
-        CheckBox doneBox = (CheckBox)findViewById(R.id.task_done);
+        mDoneBox = (CheckBox)findViewById(R.id.task_done);
         Button saveButton = (Button)findViewById(R.id.save_button);
 
-        taskNameInput.setText(mTask.getName());
+        mTaskNameInput.setText(mTask.getName());
         if (mTask.getDueDate() == null) {
             mDateButton.setText(getResources().getString(R.string.no_date));
         } else {
             updateButton();
         }
-        doneBox.setChecked(mTask.isDone());
+        mDoneBox.setChecked(mTask.isDone());
 
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +72,14 @@ public class TaskActivity extends ActionBarActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mTask.setName(mTaskNameInput.getText().toString());
+                mTask.setDone(mDoneBox.isChecked());
+                mTask.setDueDate(mCal.getTime());
 
+                Intent i = new Intent();
+                i.putExtra(EXTRA, mTask);
+                setResult(RESULT_OK, i);
+                finish();
             }
         });
     }
