@@ -14,6 +14,7 @@ import android.widget.EditText;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class TaskActivity extends ActionBarActivity {
@@ -35,9 +36,6 @@ public class TaskActivity extends ActionBarActivity {
         mTask = (Task)getIntent().getSerializableExtra(EXTRA);
 
         mCal = Calendar.getInstance();
-        if (mTask.getDueDate() != null) {
-            mCal.setTime(mTask.getDueDate());
-        }
 
         mTaskNameInput = (EditText)findViewById(R.id.task_name);
         mDateButton = (Button)findViewById(R.id.task_date);
@@ -46,8 +44,10 @@ public class TaskActivity extends ActionBarActivity {
 
         mTaskNameInput.setText(mTask.getName());
         if (mTask.getDueDate() == null) {
+            mCal.setTime(new Date());
             mDateButton.setText(getResources().getString(R.string.no_date));
         } else {
+            mCal.setTime(mTask.getDueDate());
             updateButton();
         }
         mDoneBox.setChecked(mTask.isDone());
