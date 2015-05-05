@@ -62,18 +62,21 @@ public class TaskListActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == EDIT_TASK_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                Task task = (Task)data.getSerializableExtra(TaskActivity.EXTRA);
-                mTasks.set(mLastPositionClicked, task);
-                mAdapter.notifyDataSetChanged();
-            }
-        } else if (requestCode == CREATE_TASK_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                Task task = (Task)data.getSerializableExtra(TaskActivity.EXTRA);
-                mTasks.add(task);
-                mAdapter.notifyDataSetChanged();
-            }
+        switch(requestCode) {
+            case EDIT_TASK_REQUEST:
+                if (resultCode == RESULT_OK) {
+                    Task task = (Task)data.getSerializableExtra(TaskActivity.EXTRA);
+                    mTasks.set(mLastPositionClicked, task);
+                    mAdapter.notifyDataSetChanged();
+                }
+                break;
+            case CREATE_TASK_REQUEST:
+                if (resultCode == RESULT_OK) {
+                    Task task = (Task)data.getSerializableExtra(TaskActivity.EXTRA);
+                    mTasks.add(task);
+                    mAdapter.notifyDataSetChanged();
+                }
+                break;
         }
     }
 
