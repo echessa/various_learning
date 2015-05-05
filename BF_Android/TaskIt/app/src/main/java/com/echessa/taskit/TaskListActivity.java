@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -21,7 +22,7 @@ public class TaskListActivity extends ActionBarActivity {
     private static final String TAG = "TaskListActivity";
     private static final int EDIT_TASK_REQUEST = 10;
 
-    private Task[] mTasks;
+    private ArrayList<Task> mTasks;
     private int mLastPositionClicked;
     private TaskAdapter mAdapter;
 
@@ -30,15 +31,15 @@ public class TaskListActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
 
-        mTasks = new Task[3];
-        mTasks[0] = new Task();
-        mTasks[0].setName("Task 1");
-        mTasks[0].setDueDate(new Date());
-        mTasks[1] = new Task();
-        mTasks[1].setName("Task 2");
-        mTasks[1].setDone(true);
-        mTasks[2] = new Task();
-        mTasks[2].setName("Task 3");
+        mTasks = new ArrayList<Task>();
+        mTasks.add(new Task());
+        mTasks.get(0).setName("Task 1");
+        mTasks.get(0).setDueDate(new Date());
+        mTasks.add(new Task());
+        mTasks.get(1).setName("Task 2");
+        mTasks.get(1).setDone(true);
+        mTasks.add(new Task());
+        mTasks.get(2).setName("Task 3");
 
         ListView listView = (ListView)findViewById(R.id.task_list);
         mAdapter = new TaskAdapter(mTasks);
@@ -63,14 +64,14 @@ public class TaskListActivity extends ActionBarActivity {
         if (requestCode == EDIT_TASK_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Task task = (Task)data.getSerializableExtra(TaskActivity.EXTRA);
-                mTasks[mLastPositionClicked] = task;
+                mTasks.set(mLastPositionClicked, task);
                 mAdapter.notifyDataSetChanged();
             }
         }
     }
 
     private class TaskAdapter extends ArrayAdapter<Task> {
-        TaskAdapter(Task[] tasks) {
+        TaskAdapter(ArrayList<Task> tasks) {
             super(TaskListActivity.this, R.layout.task_list_row, R.id.task_item_name, tasks);
         }
 
