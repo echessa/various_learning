@@ -7,4 +7,5 @@
     <string name="done">Done:</string>
     <string name="save">Save</string>
     <string name="no_date">No Date Selected</string>
+    <string name="add_task">Add Task</string>
 </resources>
