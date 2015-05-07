@@ -4,6 +4,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class ContactListActivity extends ActionBarActivity {
@@ -12,6 +19,31 @@ public class ContactListActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_list);
+
+        ArrayList<Contact> contacts = new ArrayList<Contact>();
+        Contact contact1 = new Contact();
+        contact1.setName("Joyce Echessa");
+        contacts.add(contact1);
+
+        ListView listView = (ListView)findViewById(R.id.contact_list_view);
+        listView.setAdapter(new ContactAdapter(contacts));
+    }
+
+    private class ContactAdapter extends ArrayAdapter<Contact> {
+        ContactAdapter(ArrayList<Contact> contacts) {
+            super(ContactListActivity.this, R.layout.contact_list_row, R.id.contact_row_name, contacts);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = super.getView(position, convertView, parent);
+
+            Contact contact = getItem(position);
+
+            TextView nameTextView = (TextView)convertView.findViewById(R.id.contact_row_name);
+            nameTextView.setText(contact.getName());
+            return convertView;
+        }
     }
 
 
