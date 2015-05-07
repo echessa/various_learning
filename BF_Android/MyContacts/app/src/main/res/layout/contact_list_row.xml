@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content">
+              android:paddingLeft="@dimen/activity_vertical_margin"
+              android:paddingRight="@dimen/activity_vertical_margin"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/row_height">
 
+    <ImageView
+        android:layout_centerVertical="true"
+        android:src="@drawable/avatar_shape"
+        android:padding="@dimen/avatar_padding"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"/>
     <TextView
+        android:layout_centerVertical="true"
         android:id="@+id/contact_row_name"
+        android:layout_marginLeft="@dimen/vertical_inner_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</RelativeLayout>
