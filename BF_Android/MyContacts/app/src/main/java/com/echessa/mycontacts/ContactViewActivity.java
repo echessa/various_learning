@@ -1,20 +1,35 @@
 package com.echessa.mycontacts;
 
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 public class ContactViewActivity extends ActionBarActivity {
 
     public static final String EXTRA = "CVA_Contact";
+    private static final String TAG = "ContactViewActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_view);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+
+        int width = point.x;
+        int height = point.y;
+
+        ImageView iv = (ImageView)findViewById(R.id.contact_view_image);
+        iv.setLayoutParams(new RelativeLayout.LayoutParams(width, (int)(width * (9.0 / 16.0))));
 
         Contact contact = (Contact)getIntent().getSerializableExtra(EXTRA);
         TextView contactName = (TextView)findViewById(R.id.contact_view_name);
