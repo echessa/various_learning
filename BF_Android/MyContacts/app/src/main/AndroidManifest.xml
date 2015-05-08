@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/NoActionBar"
             android:name=".ContactViewActivity"
             android:label="@string/title_activity_contact_view" >
         </activity>
