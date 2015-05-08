@@ -1,9 +1,11 @@
 package com.echessa.mycontacts;
 
+import java.io.Serializable;
+
 /**
  * Created by Joyce Echessa on 5/7/15.
  */
-public class Contact {
+public class Contact implements Serializable {
 
     private String mName;
 
