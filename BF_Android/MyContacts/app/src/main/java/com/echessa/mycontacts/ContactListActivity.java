@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,12 +22,34 @@ public class ContactListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_contact_list);
 
         ArrayList<Contact> contacts = new ArrayList<Contact>();
-        Contact contact1 = new Contact();
-        contact1.setName("Joyce Echessa");
-        contacts.add(contact1);
+
+        for (int i = 0; i < 30; i++) {
+            Contact contact1 = new Contact();
+            contact1.setName("Joyce Echessa");
+            contacts.add(contact1);
+        }
 
         ListView listView = (ListView)findViewById(R.id.contact_list_view);
         listView.setAdapter(new ContactAdapter(contacts));
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            int previousFirstItem = 0;
+
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if (firstVisibleItem > previousFirstItem) {
+                    getSupportActionBar().hide();
+                } else if (firstVisibleItem < previousFirstItem) {
+                    getSupportActionBar().show();
+                }
+
+                previousFirstItem = firstVisibleItem;
+            }
+        });
     }
 
     private class ContactAdapter extends ArrayAdapter<Contact> {
