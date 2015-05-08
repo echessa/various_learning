@@ -6,7 +6,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,8 +27,8 @@ public class ContactViewActivity extends ActionBarActivity {
         int width = point.x;
         int height = point.y;
 
-        ImageView iv = (ImageView)findViewById(R.id.contact_view_image);
-        iv.setLayoutParams(new RelativeLayout.LayoutParams(width, (int)(width * (9.0 / 16.0))));
+        RelativeLayout headerSection = (RelativeLayout)findViewById(R.id.contact_view_header);
+        headerSection.setLayoutParams(new RelativeLayout.LayoutParams(width, (int)(width * (9.0 / 16.0))));
 
         Contact contact = (Contact)getIntent().getSerializableExtra(EXTRA);
         TextView contactName = (TextView)findViewById(R.id.contact_view_name);
