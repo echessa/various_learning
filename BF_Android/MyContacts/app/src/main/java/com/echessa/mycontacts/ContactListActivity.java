@@ -30,6 +30,10 @@ public class ContactListActivity extends ActionBarActivity {
         for (int i = 0; i < 30; i++) {
             Contact contact1 = new Contact();
             contact1.setName("Joyce Echessa");
+            contact1.emails = new ArrayList<String>();
+            contact1.emails.add("joyce@echessa.com");
+            contact1.phoneNumbers = new ArrayList<String>();
+            contact1.phoneNumbers.add("123456789");
             mContacts.add(contact1);
         }
 
