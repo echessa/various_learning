@@ -1,8 +1,11 @@
 package com.echessa.mycontacts;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.Menu;
@@ -23,6 +26,8 @@ public class ContactViewActivity extends ActionBarActivity {
 
     public static final String EXTRA = "CVA_Contact";
     private static final String TAG = "ContactViewActivity";
+
+    private int mColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,10 @@ public class ContactViewActivity extends ActionBarActivity {
 
         ListView listView = (ListView)findViewById(R.id.contact_view_fields);
         listView.setAdapter(new FieldsAdapter(contact.phoneNumbers, contact.emails));
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.image);
+        Palette palette = Palette.generate(bitmap);
+        mColor = palette.getDarkVibrantSwatch().getRgb();
     }
 
     private class FieldsAdapter extends BaseAdapter {
@@ -85,14 +94,17 @@ public class ContactViewActivity extends ActionBarActivity {
             TextView contactValue = (TextView)convertView.findViewById(R.id.contact_view_row_value);
             contactValue.setText(value);
 
+            ImageView iv = (ImageView) convertView.findViewById(R.id.field_icon);
+
             if (isFirst(position)) {
-                ImageView iv = (ImageView) convertView.findViewById(R.id.field_icon);
                 if (isEmail(position)) {
                     iv.setImageResource(R.drawable.ic_email);
                 } else {
                     iv.setImageResource(R.drawable.ic_call);
                 }
             }
+
+            iv.setColorFilter(mColor);
 
             return convertView;
         }
