@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -84,6 +85,15 @@ public class ContactViewActivity extends ActionBarActivity {
             TextView contactValue = (TextView)convertView.findViewById(R.id.contact_view_row_value);
             contactValue.setText(value);
 
+            if (isFirst(position)) {
+                ImageView iv = (ImageView) convertView.findViewById(R.id.field_icon);
+                if (isEmail(position)) {
+                    iv.setImageResource(R.drawable.ic_email);
+                } else {
+                    iv.setImageResource(R.drawable.ic_call);
+                }
+            }
+
             return convertView;
         }
 
@@ -107,6 +117,13 @@ public class ContactViewActivity extends ActionBarActivity {
             } else {
                 return false;
             }
+        }
+
+        private boolean isFirst(int position) {
+            if (position == 0 || position == phoneNumbers.size()) {
+                return true;
+            }
+            return false;
         }
     }
 
