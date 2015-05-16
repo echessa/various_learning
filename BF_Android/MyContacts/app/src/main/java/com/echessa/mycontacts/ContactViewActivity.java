@@ -1,5 +1,6 @@
 package com.echessa.mycontacts;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -28,6 +29,7 @@ public class ContactViewActivity extends ActionBarActivity {
     private static final String TAG = "ContactViewActivity";
 
     private int mColor;
+    private Contact mContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,9 @@ public class ContactViewActivity extends ActionBarActivity {
         RelativeLayout headerSection = (RelativeLayout)findViewById(R.id.contact_view_header);
         headerSection.setLayoutParams(new LinearLayout.LayoutParams(width, (int)(width * (9.0 / 16.0))));
 
-        Contact contact = (Contact)getIntent().getSerializableExtra(EXTRA);
+        mContact = (Contact)getIntent().getSerializableExtra(EXTRA);
         TextView contactName = (TextView)findViewById(R.id.contact_view_name);
-        contactName.setText(contact.getName());
+        contactName.setText(mContact.getName());
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.contact_view_toolbar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -54,6 +56,9 @@ public class ContactViewActivity extends ActionBarActivity {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 int id = menuItem.getItemId();
                 if (id == R.id.contact_view_edit) {
+                    Intent i = new Intent(ContactViewActivity.this, ContactEditActivity.class);
+                    i.putExtra(ContactEditActivity.EXTRA, mContact);
+                    startActivity(i);
                     return true;
                 }
                 return false;
@@ -62,7 +67,7 @@ public class ContactViewActivity extends ActionBarActivity {
         toolbar.inflateMenu(R.menu.menu_contact_view);
 
         ListView listView = (ListView)findViewById(R.id.contact_view_fields);
-        listView.setAdapter(new FieldsAdapter(contact.phoneNumbers, contact.emails));
+        listView.setAdapter(new FieldsAdapter(mContact.phoneNumbers, mContact.emails));
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.image);
         Palette palette = Palette.generate(bitmap);
