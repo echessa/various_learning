@@ -2,6 +2,7 @@ package com.echessa.mycontacts;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,9 @@ public class ContactEditActivity extends ActionBarActivity {
         setContentView(R.layout.activity_contact_edit);
 
         Contact contact = (Contact)getIntent().getSerializableExtra(EXTRA);
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.contact_edit_toolbar);
+        toolbar.setTitle(getResources().getString(R.string.edit_contact));
 
         EditText editName = (EditText)findViewById(R.id.contact_edit_name);
         editName.setText(contact.getName());
