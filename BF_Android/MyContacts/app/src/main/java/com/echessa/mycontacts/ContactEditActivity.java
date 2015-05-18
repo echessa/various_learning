@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,21 +18,38 @@ public class ContactEditActivity extends ActionBarActivity {
 
     public static final String EXTRA = "CEA_EXTRA";
 
+    private Contact mContact;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_edit);
 
-        Contact contact = (Contact)getIntent().getSerializableExtra(EXTRA);
+        mContact = (Contact)getIntent().getSerializableExtra(EXTRA);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.contact_edit_toolbar);
         toolbar.setTitle(getResources().getString(R.string.edit_contact));
+        toolbar.setNavigationIcon(R.drawable.ic_done);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editName = (EditText)findViewById(R.id.contact_edit_name);
+                mContact.setName(editName.getText().toString());
+
+                mContact.phoneNumbers = getSectionValues(R.id.phonenumber_section);
+                mContact.emails = getSectionValues(R.id.email_section);
+
+                Toast.makeText(ContactEditActivity.this, "Saved contact", Toast.LENGTH_LONG).show();
+
+                finish();
+            }
+        });
 
         EditText editName = (EditText)findViewById(R.id.contact_edit_name);
-        editName.setText(contact.getName());
+        editName.setText(mContact.getName());
 
-        addToSection(R.id.phonenumber_section, contact.phoneNumbers);
-        addToSection(R.id.email_section, contact.emails);
+        addToSection(R.id.phonenumber_section, mContact.phoneNumbers);
+        addToSection(R.id.email_section, mContact.emails);
 
         TextView addNewPhoneNumber = (TextView)findViewById(R.id.add_new_phonenumber);
         addNewPhoneNumber.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +66,16 @@ public class ContactEditActivity extends ActionBarActivity {
                 addToSection(R.id.email_section, "");
             }
         });
+    }
+
+    private ArrayList<String> getSectionValues(int sectionID) {
+        ArrayList<String> values = new ArrayList<String>();
+        LinearLayout section = (LinearLayout)findViewById(sectionID);
+        for (int i = 0; i < section.getChildCount(); i++) {
+            EditText editNumber = (EditText)section.getChildAt(i);
+            values.add(editNumber.getText().toString());
+        }
+        return values;
     }
 
     private void addToSection(int sectionID, String value) {
