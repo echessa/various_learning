@@ -1,49 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/view_fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:context="com.echessa.mycontacts.ContactViewActivity">
-
-    <RelativeLayout
-        android:id="@+id/contact_view_header"
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-
-        <ImageView
-            android:id="@+id/contact_view_image"
-            android:src="@drawable/image"
-            android:scaleType="centerCrop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:id="@+id/contact_view_name"
-            android:text="@string/hello_world"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@android:color/white"
-            android:layout_marginLeft="@dimen/vertical_small_margin"
-            android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/contact_view_toolbar"
-            android:fitsSystemWindows="true"
-            android:minHeight="?attr/actionBarSize"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></android.support.v7.widget.Toolbar>
-
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/contact_view_fields"
-        android:layout_weight="100"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingRight="@dimen/vertical_small_margin"
-        android:paddingLeft="@dimen/vertical_small_margin"></ListView>
-
-</LinearLayout>
+                tools:context="com.echessa.mycontacts.ContactViewActivity"/>
