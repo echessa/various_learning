@@ -2,11 +2,17 @@ package com.echessa.sounddroid;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    private static final String TAG = "MainActivity";
 
     //id 0870cc86ff9e720019c3c139005598cb
     //secret 5c0ce8f7881c18a70482ba18438ffb7e
@@ -18,6 +24,20 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        JSONObject jsonObject = null;
+
+        try {
+            jsonObject = new JSONObject(trackJSON());
+        } catch (JSONException e) {
+            Log.d(TAG, "JSONException is " + e);
+        }
+
+        Track track = Track.parse(jsonObject);
+    }
+
+    private String trackJSON() {
+        return "";
     }
 
 
