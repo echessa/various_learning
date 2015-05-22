@@ -1,15 +1,19 @@
 package com.echessa.sounddroid;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by echessa on 5/23/15.
  */
 public class Track {
 
+    @SerializedName("title")
     private String mTitle;
+
+    @SerializedName("stream_url")
     private String mStreamURL;
+
+    @SerializedName("id")
     private int mID;
 
     public String getTitle() {
@@ -34,16 +38,5 @@ public class Track {
 
     public void setID(int ID) {
         mID = ID;
-    }
-
-    public static Track parse(JSONObject jsonObject) {
-        Track t = new Track();
-
-        try {
-            t.setTitle(jsonObject.getString("title"));
-        } catch (JSONException e) {
-
-        }
-        return t;
     }
 }

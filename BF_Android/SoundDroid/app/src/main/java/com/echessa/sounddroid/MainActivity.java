@@ -1,13 +1,11 @@
 package com.echessa.sounddroid;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.gson.Gson;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -25,15 +23,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JSONObject jsonObject = null;
-
-        try {
-            jsonObject = new JSONObject(trackJSON());
-        } catch (JSONException e) {
-            Log.d(TAG, "JSONException is " + e);
-        }
-
-        Track track = Track.parse(jsonObject);
+        Gson gson = new Gson();
+        Track track = gson.fromJson(trackJSON(), Track.class);
     }
 
     private String trackJSON() {
