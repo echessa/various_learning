@@ -5,11 +5,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -27,14 +28,23 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Track>>(){}.getType();
-        List<Track> tracks = gson.fromJson(trackJSON(), type);
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setEndpoint("https://api.soundcloud.com")
+                .build();
+        SoundCloudService service = restAdapter.create(SoundCloudService.class);
+        service.searchSongs("dark horse", new Callback<List<Track>>() {
+            @Override
+            public void success(List<Track> tracks, Response response) {
 
-    }
+            }
 
-    private String trackJSON() {
-        return "";
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
+
     }
 
 
