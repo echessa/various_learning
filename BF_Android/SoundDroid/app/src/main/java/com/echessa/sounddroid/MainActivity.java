@@ -30,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
         Gson gson = new Gson();
         Type type = new TypeToken<List<Track>>(){}.getType();
         List<Track> tracks = gson.fromJson(trackJSON(), type);
-        
+
     }
 
     private String trackJSON() {
