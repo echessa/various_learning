@@ -1,4 +1,4 @@
-package com.echessa.sounddroid;
+package com.echessa.sounddroid.soundcloud;
 
 import java.util.List;
 

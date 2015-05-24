@@ -1,4 +1,4 @@
-package com.echessa.sounddroid;
+package com.echessa.sounddroid.soundcloud;
 
 import com.google.gson.annotations.SerializedName;
 

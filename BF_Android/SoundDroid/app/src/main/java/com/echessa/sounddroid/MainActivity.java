@@ -5,6 +5,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.echessa.sounddroid.soundcloud.SoundCloudService;
+import com.echessa.sounddroid.soundcloud.Track;
+
 import java.util.List;
 
 import retrofit.Callback;
