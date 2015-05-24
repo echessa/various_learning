@@ -5,13 +5,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.echessa.sounddroid.soundcloud.SoundCloud;
 import com.echessa.sounddroid.soundcloud.SoundCloudService;
 import com.echessa.sounddroid.soundcloud.Track;
 
 import java.util.List;
 
 import retrofit.Callback;
-import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
@@ -31,11 +31,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .setEndpoint("https://api.soundcloud.com")
-                .build();
-        SoundCloudService service = restAdapter.create(SoundCloudService.class);
+        SoundCloudService service = SoundCloud.getService();
         service.searchSongs("dark horse", new Callback<List<Track>>() {
             @Override
             public void success(List<Track> tracks, Response response) {
