@@ -2,6 +2,8 @@ package com.echessa.sounddroid;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,6 +11,7 @@ import com.echessa.sounddroid.soundcloud.SoundCloud;
 import com.echessa.sounddroid.soundcloud.SoundCloudService;
 import com.echessa.sounddroid.soundcloud.Track;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit.Callback;
@@ -20,22 +23,27 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "MainActivity";
 
-    //id 0870cc86ff9e720019c3c139005598cb
-    //secret 5c0ce8f7881c18a70482ba18438ffb7e
-    //end user auth https://soundcloud.com/connect
-    //token https://api.soundcloud.com/oauth2/token
-    // https://api.soundcloud.com/tracks?client_id=YOUR_CLIENT_ID
+    private TracksAdapter mAdapter;
+    private List<Track> mTracks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.songs_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mTracks = new ArrayList<Track>();
+        mAdapter = new TracksAdapter(mTracks);
+        recyclerView.setAdapter(mAdapter);
+
         SoundCloudService service = SoundCloud.getService();
         service.searchSongs("dark horse", new Callback<List<Track>>() {
             @Override
             public void success(List<Track> tracks, Response response) {
-
+                mTracks.clear();
+                mTracks.addAll(tracks);
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override
