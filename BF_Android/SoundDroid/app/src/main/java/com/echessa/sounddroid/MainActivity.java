@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.songs_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mTracks = new ArrayList<Track>();
-        mAdapter = new TracksAdapter(mTracks);
+        mAdapter = new TracksAdapter(this, mTracks);
         recyclerView.setAdapter(mAdapter);
 
         SoundCloudService service = SoundCloud.getService();
