@@ -3,6 +3,7 @@ package com.echessa.sounddroid;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -42,6 +43,7 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
     private MediaPlayer mMediaPlayer;
     private ImageView mPlayerStateButton;
     private SearchView mSearchView;
+    private List<Track> mPreviousTracks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,6 +154,19 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
         getMenuInflater().inflate(R.menu.menu_main, menu);
         mSearchView = (SearchView)menu.findItem(R.id.search_view).getActionView();
         mSearchView.setOnQueryTextListener(this);
+        MenuItemCompat.setOnActionExpandListener(menu.findItem(R.id.search_view), new MenuItemCompat.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                mPreviousTracks = new ArrayList<Track>(mTracks);
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                updateTracks(mPreviousTracks);
+                return true;
+            }
+        });
         return true;
     }
 
