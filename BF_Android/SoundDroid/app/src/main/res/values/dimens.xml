@@ -6,6 +6,7 @@
     <dimen name="vertical_small_margin">16dp</dimen>
     <dimen name="vertical_large_margin">72dp</dimen>
     <dimen name="vertical_inner_margin">56dp</dimen>
+    <dimen name="player_toolbar">56dp</dimen>
 
     <dimen name="avatar_size">48dp</dimen>
     <dimen name="avatar_padding">4dp</dimen>

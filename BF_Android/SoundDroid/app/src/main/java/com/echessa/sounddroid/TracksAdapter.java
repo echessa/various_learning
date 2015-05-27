@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import java.util.List;
  */
 public class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.ViewHolder> {
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView titleTextView;
         private final ImageView thumbImageView;
@@ -28,14 +29,26 @@ public class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.ViewHolder
             titleTextView = (TextView)v.findViewById(R.id.track_title);
             thumbImageView = (ImageView)v.findViewById(R.id.track_thumbnail);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(null, v, getAdapterPosition(), 0);
+            }
+        }
     }
 
     private List<Track> mTracks;
     private Context mContext;
+    private AdapterView.OnItemClickListener mOnItemClickListener;
 
     TracksAdapter(Context context, List<Track> tracks) {
         mContext = context;
         mTracks = tracks;
+    }
+
+    public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
     }
 
     @Override

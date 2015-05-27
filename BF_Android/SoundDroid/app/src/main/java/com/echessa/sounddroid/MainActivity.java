@@ -4,12 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.echessa.sounddroid.soundcloud.SoundCloud;
 import com.echessa.sounddroid.soundcloud.SoundCloudService;
 import com.echessa.sounddroid.soundcloud.Track;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +31,31 @@ public class MainActivity extends ActionBarActivity {
 
     private TracksAdapter mAdapter;
     private List<Track> mTracks;
+    private TextView mSelectedTitle;
+    private ImageView mSelectedThumbnail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.player_toolbar);
+        mSelectedTitle = (TextView)findViewById(R.id.selected_title);
+        mSelectedThumbnail = (ImageView)findViewById(R.id.selected_thumbnail);
+
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.songs_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mTracks = new ArrayList<Track>();
         mAdapter = new TracksAdapter(this, mTracks);
+        mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Track selectedTrack = mTracks.get(position);
+
+                mSelectedTitle.setText(selectedTrack.getTitle());
+                Picasso.with(MainActivity.this).load(selectedTrack.getAvatarURL()).into(mSelectedThumbnail);
+            }
+        });
         recyclerView.setAdapter(mAdapter);
 
         SoundCloudService service = SoundCloud.getService();
