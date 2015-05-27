@@ -15,4 +15,7 @@ public interface SoundCloudService {
 
     @GET("/tracks?client_id=" + CLIENT_ID)
     public void searchSongs(@Query("q") String query, Callback<List<Track>> cb);
+
+    @GET("/tracks?client_id=" + CLIENT_ID)
+    public void getRecentSongs(@Query("created_at[from]") String date, Callback<List<Track>> cb);
 }
