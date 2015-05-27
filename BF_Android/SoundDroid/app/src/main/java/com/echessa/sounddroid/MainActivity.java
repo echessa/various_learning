@@ -37,6 +37,7 @@ public class MainActivity extends ActionBarActivity {
     private TextView mSelectedTitle;
     private ImageView mSelectedThumbnail;
     private MediaPlayer mMediaPlayer;
+    private ImageView mPlayerStateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +49,19 @@ public class MainActivity extends ActionBarActivity {
         mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                mp.start();
+                toggleSongState();
             }
         });
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.player_toolbar);
         mSelectedTitle = (TextView)findViewById(R.id.selected_title);
         mSelectedThumbnail = (ImageView)findViewById(R.id.selected_thumbnail);
-        ImageView playerStateButton = (ImageView)findViewById(R.id.player_state);
+        mPlayerStateButton = (ImageView)findViewById(R.id.player_state);
 
-        playerStateButton.setOnClickListener(new View.OnClickListener() {
+        mPlayerStateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mMediaPlayer.pause();
+                toggleSongState();
             }
         });
 
@@ -101,6 +102,16 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+    }
+
+    private void toggleSongState() {
+        if (mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+            mPlayerStateButton.setImageResource(R.drawable.ic_play);
+        } else {
+            mMediaPlayer.start();
+            mPlayerStateButton.setImageResource(R.drawable.ic_pause);
+        }
     }
 
 
