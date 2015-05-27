@@ -55,6 +55,14 @@ public class MainActivity extends ActionBarActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.player_toolbar);
         mSelectedTitle = (TextView)findViewById(R.id.selected_title);
         mSelectedThumbnail = (ImageView)findViewById(R.id.selected_thumbnail);
+        ImageView playerStateButton = (ImageView)findViewById(R.id.player_state);
+
+        playerStateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMediaPlayer.pause();
+            }
+        });
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.songs_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
