@@ -28,6 +28,7 @@ public class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.ViewHolder
             super(v);
             titleTextView = (TextView)v.findViewById(R.id.track_title);
             thumbImageView = (ImageView)v.findViewById(R.id.track_thumbnail);
+            v.setOnClickListener(this);
         }
 
         @Override
