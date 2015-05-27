@@ -52,6 +52,12 @@ public class MainActivity extends ActionBarActivity {
                 toggleSongState();
             }
         });
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mPlayerStateButton.setImageResource(R.drawable.ic_play);
+            }
+        });
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.player_toolbar);
         mSelectedTitle = (TextView)findViewById(R.id.selected_title);
