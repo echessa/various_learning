@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 
@@ -28,9 +27,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] from = {DBOpenHelper.NOTE_TEXT};
-        int[] to = {R.id.tvNote};
-        cursorAdapter = new SimpleCursorAdapter(this, R.layout.note_list_item, null, from, to, 0);
+        cursorAdapter = new NotesCursorAdapter(this, null, 0);
 
         ListView list = (ListView)findViewById(android.R.id.list);
         list.setAdapter(cursorAdapter);
