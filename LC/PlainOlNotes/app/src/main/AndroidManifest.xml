@@ -18,9 +18,18 @@
         </activity>
 
         <provider
-            android:authorities="com.echessa.plainolnotes.notesprovider"
             android:name=".NotesProvider"
+            android:authorities="com.echessa.plainolnotes.notesprovider"
             android:exported="false" />
+
+        <activity
+            android:name=".EditorActivity"
+            android:label="@string/title_activity_editor"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.echessa.plainolnotes.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
