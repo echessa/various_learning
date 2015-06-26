@@ -8,16 +8,16 @@ import java.util.UUID;
  */
 public class Crime {
 
+    private UUID mId;
+    private String mTitle;
+    private Date mDate;
+    private boolean mSolved;
+
     public Crime() {
         // Generate unique identifier
         mId = UUID.randomUUID();
         mDate = new Date();
     }
-
-    private UUID mId;
-    private String mTitle;
-    private Date mDate;
-    private boolean mSolved;
 
     public UUID getId() {
         return mId;
@@ -45,5 +45,10 @@ public class Crime {
 
     public void setSolved(boolean solved) {
         mSolved = solved;
+    }
+
+    @Override
+    public String toString() {
+        return mTitle;
     }
 }

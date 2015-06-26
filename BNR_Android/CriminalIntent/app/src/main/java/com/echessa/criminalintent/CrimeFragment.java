@@ -18,13 +18,13 @@ import android.widget.EditText;
  */
 public class CrimeFragment extends Fragment {
 
-    public CrimeFragment() {
-    }
-
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+
+    public CrimeFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
