@@ -1,5 +1,6 @@
 package com.echessa.criminalintent;
 
+import android.app.DatePickerDialog;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,8 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 
@@ -26,6 +31,7 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    private Calendar mCal;
 
     public CrimeFragment() {
     }
@@ -42,6 +48,9 @@ public class CrimeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
+
+        mCal = Calendar.getInstance();
+        mCal.setTime(mCrime.getDate());
 
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
@@ -63,8 +72,24 @@ public class CrimeFragment extends Fragment {
         });
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-        mDateButton.setText(mCrime.getDate().toString());
-        mDateButton.setEnabled(false);
+        updateDate();
+        mDateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dpd = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        mCal.set(Calendar.YEAR, year);
+                        mCal.set(Calendar.MONTH, monthOfYear);
+                        mCal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                        mCrime.setDate(mCal.getTime());
+                        updateDate();
+                    }
+                }, mCal.get(Calendar.YEAR), mCal.get(Calendar.MONTH), mCal.get(Calendar.DAY_OF_MONTH));
+                dpd.show();
+            }
+        });
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
@@ -87,5 +112,9 @@ public class CrimeFragment extends Fragment {
         fragment.setArguments(args);
 
         return fragment;
+    }
+
+    public void updateDate() {
+        mDateButton.setText(mCrime.getDate().toString());
     }
 }
