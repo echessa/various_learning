@@ -1,7 +1,6 @@
 package com.echessa.criminalintent;
 
 import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -18,13 +17,6 @@ public class CrimeLab {
     private CrimeLab(Context appContext) {
         mAppContext = appContext;
         mCrimes = new ArrayList<Crime>();
-
-        for (int i = 0; i < 100; i++) {
-            Crime c = new Crime();
-            c.setTitle("Crime #" + i);
-            c.setSolved(i % 2 == 0); // Every other one
-            mCrimes.add(c);
-        }
     }
 
     public static CrimeLab get(Context c) {
@@ -45,6 +37,10 @@ public class CrimeLab {
             }
         }
         return null;
+    }
+
+    public void addCrime(Crime c) {
+        mCrimes.add(c);
     }
 
 }
