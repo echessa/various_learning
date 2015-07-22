@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/libs/picasso-2.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ab19bfb23f641f189b6dca9a4d393f8dc291103a">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/picasso-2.1.1-14a28c1363aeda3841d8839fad0993ff81daf853.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-6c84b9af66fc0087fdaa81d1ef77ba8386d16c50.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/classes-99dc653dbfacc0918e1ea3afce28df321ee12beb.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-67b0d5a6eb5261c417ca476872d115f465cf6e45.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/libs/commons-io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/commons-io-2.4-840f856f45203861ca2a604d476b10315ecb495b.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/classes-d5fa59491385584194ea6acf5f9bcce8f850123c.jar" />
+    </item>
+    <item
+        jar="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/libs/Parse-1.3.9.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="077b21d82e098a5d95e46b1868c664a23ada163a">
+        <dex dex="/home/echessa/Documents/JOYCE/various_learning/TH/Android/Ribbit/app/build/intermediates/pre-dexed/debug/Parse-1.3.9-2c552baff45605fb0d2ba6199ecfb20707e6354f.jar" />
+    </item>
+
+</items>

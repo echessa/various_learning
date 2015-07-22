@@ -1,0 +1,67 @@
+<RelativeLayout style="@style/AuthBackground"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        style="@style/AuthBackgroundImage"
+        android:contentDescription="@string/content_desc_background"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/AuthTitle"/>
+
+    <TextView
+        android:id="@+id/subtitle"
+        style="@style/AuthSubTitle"/>
+
+    <LinearLayout
+        android:id="@+id/editTextLayout"
+        style="@style/AuthFieldContainer">
+
+        <EditText
+            android:id="@+id/usernameField"
+            android:hint="@string/username_hint"
+            style="@style/AuthEditText">
+
+            <requestFocus/>
+        </EditText>
+
+        <EditText
+            android:id="@+id/passwordField"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            style="@style/AuthEditText"/>
+
+        <EditText
+            android:id="@+id/emailField"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            style="@style/AuthEditText"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/buttonDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLayout"/>
+
+    <Button
+        android:id="@+id/signupButton"
+        android:text="@string/sign_up_button_label"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout"
+        style="@style/AuthButton"/>
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:text="@string/cancel_button_label"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout"
+        style="@style/AuthButton"/>
+
+</RelativeLayout>
