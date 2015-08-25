@@ -1,12 +1,22 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <it.neokree.materialtabs.MaterialTabHost
+        android:id="@+id/tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:accentColor="@color/primary_dark"
+        app:primaryColor="@color/primary"
+        app:textColor="#FFFFFF"/>
 
     <FrameLayout
         android:id="@+id/feed_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</RelativeLayout>
+</LinearLayout>

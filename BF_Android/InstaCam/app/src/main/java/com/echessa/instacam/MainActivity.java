@@ -10,8 +10,14 @@ import android.view.MenuItem;
 
 import java.io.File;
 
+import it.neokree.materialtabs.MaterialTab;
+import it.neokree.materialtabs.MaterialTabHost;
+import it.neokree.materialtabs.MaterialTabListener;
 
-public class MainActivity extends AppCompatActivity {
+
+//public class MainActivity extends AppCompatActivity implements ShareActionProvider.OnShareTargetSelectedListener {
+
+public class MainActivity extends AppCompatActivity implements MaterialTabListener {
 
     private static final String TAG = "MainActivity";
     private static final int CAMERA_REQUEST = 10;
@@ -22,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MaterialTabHost tabBar = (MaterialTabHost) findViewById(R.id.tab_bar);
+        tabBar.addTab(tabBar.newTab().setText("HOME").setTabListener(this));
+        tabBar.addTab(tabBar.newTab().setText("PROFILE").setTabListener(this));
 
         mFeedFragment = (FeedFragment)getFragmentManager().findFragmentById(R.id.feed_container);
         if (mFeedFragment == null) {
@@ -64,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+//        ShareActionProvider share = (ShareActionProvider) MenuItemCompat.getActionProvider(menu.findItem(R.id.action_settings));
+//        Intent i = new Intent(Intent.ACTION_SEND);
+//        i.setType("text/plain");
+//        share.setShareIntent(i);
+//
+//        share.setOnShareTargetSelectedListener(this);
         return true;
     }
 
@@ -81,4 +97,25 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onTabSelected(MaterialTab materialTab) {
+
+    }
+
+    @Override
+    public void onTabReselected(MaterialTab materialTab) {
+
+    }
+
+    @Override
+    public void onTabUnselected(MaterialTab materialTab) {
+
+    }
+
+//    @Override
+//    public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {
+//        startActivity(intent);
+//        return false;
+//    }
 }
