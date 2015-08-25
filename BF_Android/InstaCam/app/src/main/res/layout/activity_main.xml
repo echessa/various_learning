@@ -6,8 +6,18 @@
               android:orientation="vertical"
               tools:context=".MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:elevation="8dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize" />
+
     <it.neokree.materialtabs.MaterialTabHost
         android:id="@+id/tab_bar"
+        android:elevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:accentColor="@color/primary_dark"
