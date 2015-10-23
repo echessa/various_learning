@@ -20,7 +20,8 @@
         android:elevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        app:accentColor="@color/primary_dark"
+        app:hasIcons="true"
+        app:accentColor="@color/accent"
         app:primaryColor="@color/primary"
         app:textColor="#FFFFFF"/>
 

@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private static final int CAMERA_REQUEST = 10;
     private File mPhoto;
     private FeedFragment mFeedFragment;
+    private MaterialTabHost mTabBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        MaterialTabHost tabBar = (MaterialTabHost) findViewById(R.id.tab_bar);
-        tabBar.addTab(tabBar.newTab().setText("HOME").setTabListener(this));
-        tabBar.addTab(tabBar.newTab().setText("PROFILE").setTabListener(this));
+        mTabBar = (MaterialTabHost) findViewById(R.id.tab_bar);
+        mTabBar.addTab(mTabBar.newTab().setIcon(getResources().getDrawable(R.drawable.ic_home)).setTabListener(this));
+        mTabBar.addTab(mTabBar.newTab().setIcon(getResources().getDrawable(R.drawable.ic_profile)).setTabListener(this));
 
         mFeedFragment = (FeedFragment)getFragmentManager().findFragmentById(R.id.feed_container);
         if (mFeedFragment == null) {
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     @Override
     public void onTabSelected(MaterialTab materialTab) {
-
+        mTabBar.setSelectedNavigationItem(materialTab.getPosition());
     }
 
     @Override
