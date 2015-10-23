@@ -1,5 +1,6 @@
 package com.echessa.instacam;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private File mPhoto;
     private FeedFragment mFeedFragment;
     private MaterialTabHost mTabBar;
+    private ProfileFragment mProfileFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +107,25 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     @Override
     public void onTabSelected(MaterialTab materialTab) {
-        mTabBar.setSelectedNavigationItem(materialTab.getPosition());
+        int position = materialTab.getPosition();
+        mTabBar.setSelectedNavigationItem(position);
+
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
+                fragment = mFeedFragment;
+                break;
+            case 1:
+                if (mProfileFragment == null) {
+                    mProfileFragment = new ProfileFragment();
+                }
+                fragment = mProfileFragment;
+                break;
+        }
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.feed_container, fragment)
+                .commit();
     }
 
     @Override
