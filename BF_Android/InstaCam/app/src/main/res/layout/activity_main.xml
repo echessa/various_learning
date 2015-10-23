@@ -8,26 +8,42 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:elevation="8dp"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="@color/primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize" />
+        android:background="@color/primary"
+        android:elevation="8dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <it.neokree.materialtabs.MaterialTabHost
         android:id="@+id/tab_bar"
-        android:elevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        app:hasIcons="true"
+        android:elevation="8dp"
         app:accentColor="@color/accent"
+        app:hasIcons="true"
         app:primaryColor="@color/primary"
         app:textColor="#FFFFFF"/>
 
-    <FrameLayout
-        android:id="@+id/feed_container"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/feed_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:src="@drawable/ic_camera"
+            android:elevation="8dp"
+            android:layout_margin="@dimen/vertical_small_margin"
+            android:background="@drawable/fab"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
