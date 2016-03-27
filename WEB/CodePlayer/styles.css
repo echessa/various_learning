@@ -1,0 +1,100 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+}
+
+.wrapper {
+
+}
+
+.clear {
+	clear: both;
+}
+
+.main-header {
+	position: static;
+	width: 100%;
+	height: 50px;
+	background-color: lightgrey;
+	border-bottom: 1px solid grey;
+}
+
+.logo {
+	padding: 10px 0 0 20px;
+	font-weight: bold;
+	float: left;
+	font-size: 1.2em;
+}
+
+.run-button-div {
+	float: right;
+	padding: 8px 20px 0 0;
+	font-size: 1.2em;
+}
+
+#run-button {
+	font-size: 1.2em;
+	border-radius: 3px;
+}
+
+.toggles {
+	margin: 0 auto;
+	list-style: none;
+	width: 203px;
+	border-radius: 3px;
+	height: 27px;
+	border: 1px solid grey;
+	padding: 0;
+	position: relative;
+	top: 10px;
+}
+
+.toggles li {
+	float: left;
+	border-right: 1px solid grey;
+	padding: 5px 8px;
+}
+
+.code-container {
+	position: relative;
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+
+.code-container textarea {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-right: 1px solid grey;
+	font-family: monospace;
+	padding: 40px 10px;
+	font-size: 1.1em;
+	box-sizing: border-box;
+}
+
+.code-label {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+#CSS-container, #JS-container {
+	display: none;
+}
+
+iframe {
+	height: 100%;
+	position: relative;
+	left: 20px;
+	border: none;
+}
+
+.selected {
+	background-color: grey;
+}

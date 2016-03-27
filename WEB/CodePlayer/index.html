@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Player</title>
+
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <header class="main-header">
+
+      <div class="logo">CodePlayer</div>
+
+      <div class="run-button-div">
+        <button id="run-button">Run</button>
+      </div>
+
+      <ul class="toggles">
+        <li class="toggle selected">HTML</li>
+        <li class="toggle">CSS</li>
+        <li class="toggle">JS</li>
+        <li class="toggle selected" style="border-right: none">Result</li>
+      </ul>
+
+    </header>
+
+    <div class="clear"></div>
+
+    <div class="code-container" id="HTML-container">
+      <div class="code-label">HTML</div>
+      <textarea id="html-code"><div id="test"></div></textarea>
+    </div>
+
+    <div class="code-container" id="CSS-container">
+      <div class="code-label">CSS</div>
+      <textarea id="css-code">html {background-color: blue;}</textarea>
+    </div>
+
+    <div class="code-container" id="JS-container">
+      <div class="code-label">JS</div>
+      <textarea id="js-code">document.getElementById("test").innerHTML="Working";</textarea>
+    </div>
+
+    <div class="code-container" id="Result-container">
+      <div class="code-label">Result</div>
+      <iframe id="result-frame"></iframe>
+    </div>
+    
+  </div>
+
+  <script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
+
+</script>
+</body>
+</html>

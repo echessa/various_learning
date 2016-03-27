@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Player</title>
+
+  <link rel="stylesheet" type="text/css" href="codeplayer.css">
+</head>
+
+<body>
+  <header>
+    <h2>Code Player</h2>
+    <ul class="button-panel">
+      <li class="toggle enabled">HTML</li>
+      <li class="toggle">CSS</li>
+      <li class="toggle">JS</li>
+      <li class="toggle enabled">Result</li>
+    </ul>
+
+    <div id="run">Run</div>
+  </header>
+
+  <div class="clear"></div>
+
+  <div class="column enabled" id="html">
+    <div class="ident">HTML</div>
+    <textarea id="htmlText">
+Example Text
+  </textarea>
+  </div>
+  <div class="column" id="css">
+    <div class="ident">CSS</div>
+    <textarea id="cssText"></textarea>
+  </div>
+
+  <div class="column" id="js">
+    <div class="ident">JS</div>
+    <textarea id="jsText"></textarea>
+  </div>
+
+  <div class="column enabled" id="result">
+    <div class="ident">Result</div>
+    <iframe id="result-frame"></iframe>
+  </div>
+
+  <script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+  <script type="text/javascript" src="codeplayer.js"></script>
+</body>
+</html>
