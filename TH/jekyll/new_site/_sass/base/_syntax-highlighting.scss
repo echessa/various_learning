@@ -2,9 +2,12 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #fff;
-    @extend %vertical-rhythm;
-
+    background: palette(grey, xx-light);
+    padding: em(5px) em(20px);
+    margin-top: em(24px);
+    margin-bottom: em(34px);
+    border-radius: $br--default;
+    
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
     .k     { font-weight: bold } // Keyword
