@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+    width: 340px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: auto;
+    box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+    border-radius: 4px;
+}
+
+.animal-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.interesting-fact, .detail {
+    font-style: italic;
+    margin-top: 0px;
+}
+
+.detail-title {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h3 {
+    margin: 0px 0px 20px 0px;
+    font-size: 2em;
+}
+
+.description {
+    margin-bottom: 0px;
+}
