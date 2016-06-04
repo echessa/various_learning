@@ -1,0 +1,17 @@
+{
+  "name": "temp-by-zip-code",
+  "version": "1.0.0",
+  "description": "Gives temperature from Zip code",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Joyce Echessa",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "forecastio": "^1.0.1",
+    "zippity-do-dah": "0.0.2"
+  }
+}
