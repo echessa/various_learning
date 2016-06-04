@@ -1,0 +1,15 @@
+{
+  "name": "file-server",
+  "version": "1.0.0",
+  "description": "A Simple File Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Joyce Echessa",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}
