@@ -6,7 +6,7 @@ class Movie():
     Attributes:
         title: A String for the title of the movie
         poster_image_url: A String for the URL of the movie's box art image
-        trailer_youtube_url: A String for the URL of the movie's trailer on YouTube
+        trailer_youtube_url: A String for the URL of the movie's trailer on YouTube  # noqa
     """
 
     def __init__(self, movie_title, poster_image, trailer_youtube):
