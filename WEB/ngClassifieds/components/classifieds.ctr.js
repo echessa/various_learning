@@ -3,10 +3,11 @@
 
     angular
     .module("ngClassifieds")
-    .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast) {
+    .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog) {
         classifiedsFactory.getClassifieds()
             .then(function(classifieds) {
                 $scope.classifieds = classifieds.data;
+                $scope.categories = getCategories($scope.classifieds);
             });
 
         var fakeContact = {
@@ -46,6 +47,21 @@
             showToast("Edit Saved!");
         };
 
+        $scope.deleteClassified = function(event, classified) {
+            var confirm = $mdDialog.confirm()
+                .title("Are you sure you want to delete " + classified.title + "?")
+                .ok("Yes")
+                .cancel("No")
+                .targetEvent(event);
+
+            $mdDialog.show(confirm).then(function() {
+                var index = $scope.classifieds.indexOf(classified);
+                $scope.classifieds.splice(index, 1);
+            }, function() {
+
+            });
+        };
+
         function showToast(message) {
             $mdToast.show(
                 $mdToast.simple()
@@ -53,6 +69,18 @@
                     .position("top, right")
                     .hideDelay(3000)
             );
+        }
+
+        function getCategories(classifieds) {
+            var categories = [];
+
+            angular.forEach(classifieds, function(item) {
+                angular.forEach(item.categories, function(category) {
+                    categories.push(category);
+                });
+            });
+
+            return _.uniq(categories);
         }
     });
 })();

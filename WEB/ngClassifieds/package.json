@@ -1,0 +1,19 @@
+{
+  "name": "ng-classifieds",
+  "version": "1.0.0",
+  "description": "Demo app built with Angular.js and Angular Material",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joyce Echessa",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-ui-router": "^0.3.1",
+    "mdi": "^1.6.50"
+  }
+}
