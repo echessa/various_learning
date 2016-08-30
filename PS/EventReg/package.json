@@ -1,0 +1,18 @@
+{
+  "name": "demoapp",
+  "version": "1.0.0",
+  "description": "This project is a sample application demonstrating a more fully developed realistic single page angular application.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Eames & Jim Cooper",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.13.1",
+    "express": "4.13.0"
+  }
+}
