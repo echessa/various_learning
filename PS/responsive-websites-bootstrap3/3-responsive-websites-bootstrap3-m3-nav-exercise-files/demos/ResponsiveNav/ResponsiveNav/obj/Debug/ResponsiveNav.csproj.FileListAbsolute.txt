@@ -1,0 +1,12 @@
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.dll.config
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.dll
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.pdb
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.csprojResolveAssemblyReference.cache
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.dll
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.pdb
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.dll.config
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.dll
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\bin\ResponsiveNav.pdb
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.csprojResolveAssemblyReference.cache
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.dll
+C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m3-nav\demos\ResponsiveNav\ResponsiveNav\obj\Debug\ResponsiveNav.pdb
