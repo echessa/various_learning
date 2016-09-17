@@ -1,1 +1,0 @@
-Any HTML, CSS and JavaScript editors will work fine for this course.  The free open-source project, Bootstrap will be used.  The author uses a free version of Microsoft's Visual Studio, Visual Studio 2013 Express.

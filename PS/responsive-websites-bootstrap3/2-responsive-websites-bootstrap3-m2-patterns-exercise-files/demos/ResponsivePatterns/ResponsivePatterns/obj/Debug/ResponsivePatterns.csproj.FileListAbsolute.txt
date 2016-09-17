@@ -1,6 +1,0 @@
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\bin\ResponsivePatterns.dll.config
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\bin\ResponsivePatterns.dll
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\bin\ResponsivePatterns.pdb
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\obj\Debug\ResponsivePatterns.csprojResolveAssemblyReference.cache
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\obj\Debug\ResponsivePatterns.dll
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m2-patterns\demos\ResponsivePatterns\ResponsivePatterns\obj\Debug\ResponsivePatterns.pdb

@@ -1,6 +1,0 @@
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\bin\ScrollingEffects.dll.config
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\bin\ScrollingEffects.dll
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\bin\ScrollingEffects.pdb
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\obj\Debug\ScrollingEffects.csprojResolveAssemblyReference.cache
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\obj\Debug\ScrollingEffects.dll
-C:\Users\Mark Zamoyta\dev\Pluralsight\responsive-websites-bootstrap3\responsive-websites-bootstrap3-m5-scrolling\demos\ScrollingEffects\ScrollingEffects\obj\Debug\ScrollingEffects.pdb
