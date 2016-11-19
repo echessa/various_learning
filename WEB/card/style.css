@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #414148;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: .35em;
+    display: table;
+    width: 80%;
+    margin: 1.5em auto;
+}
+
+.card-inner {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 1.5em 12%;
+    background: rgba(230, 56, 222, 0.5);
+    border-radius: .35em;
+    color: #ffffff;
+}
+
+.author p {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.quote p {
+    font-size: 3em;
+    margin: 0;
+}
+
+.tweet-button {
+
+}
+
+.next-button {
+    float: right;
+}
+
+.controls {
+    margin-top: 1.5em;
+}
+
+footer {
+    text-align: center;
+}
