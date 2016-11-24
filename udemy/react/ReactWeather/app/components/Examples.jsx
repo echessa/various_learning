@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Examples = (props) => {
+var Examples = () => {
     return (
         <h3>Examples component</h3>
     );
