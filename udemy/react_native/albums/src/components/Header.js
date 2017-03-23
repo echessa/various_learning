@@ -1,26 +1,20 @@
-import React, { Component } from 'react';
+// Import libraries for making a component
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-export default class Header extends Component {
-  render() {
-    const {
-      textStyle,
-      viewStyle
-    } = styles;
+const Header = (props) => {
+  const { textStyle, viewStyle } = styles;
 
-    const { headerText } = this.props;
-
-    return (
-      <View style={viewStyle}>
-        <Text style={textStyle}>{headerText}</Text>
-      </View>
-    );
-  }
-}
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>{props.headerText}</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   viewStyle: {
@@ -38,20 +32,6 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20
   }
-  // container: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: '#F5FCFF',
-  // },
-  // welcome: {
-  //   fontSize: 20,
-  //   textAlign: 'center',
-  //   margin: 10,
-  // },
-  // instructions: {
-  //   textAlign: 'center',
-  //   color: '#333333',
-  //   marginBottom: 5,
-  // },
 });
+
+export default Header;
