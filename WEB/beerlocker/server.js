@@ -9,6 +9,7 @@ var userController = require('./controllers/user');
 
 // Connect to the beerlocker MongoDB
 mongoose.connect('mongodb://localhost:27017/beerlocker');
+mongoose.Promise = global.Promise;
 
 // Create our Express application
 var app = express();
