@@ -2,6 +2,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var authController = require('./controllers/auth');
 var beerController = require('./controllers/beer');
 var userController = require('./controllers/user');
 
@@ -19,24 +21,27 @@ app.use(bodyParser.urlencoded({
 // Use environment defined port or 3000
 var port = process.env.PORT || 3000;
 
+// Use the passport package in our application
+app.use(passport.initialize());
+
 // Create our Express router
 var router = express.Router();
 
 // Create endpoint handlers for /beers
 router.route('/beers')
-  .post(beerController.postBeers)
-  .get(beerController.getBeers);
+  .post(authController.isAuthenticated, beerController.postBeers)
+  .get(authController.isAuthenticated, beerController.getBeers);
 
 // Create endpoint handlers for /beers/:beer_id
 router.route('/beers/:beer_id')
-  .get(beerController.getBeer)
-  .put(beerController.putBeer)
-  .delete(beerController.deleteBeer);
+  .get(authController.isAuthenticated, beerController.getBeer)
+  .put(authController.isAuthenticated, beerController.putBeer)
+  .delete(authController.isAuthenticated, beerController.deleteBeer);
 
 // Create endpoint handlers for /users
 router.route('/users')
   .post(userController.postUsers)
-  .get(userController.getUsers);
+  .get(authController.isAuthenticated, userController.getUsers);
 
 // Register all our routes with /api
 app.use('/api', router);
