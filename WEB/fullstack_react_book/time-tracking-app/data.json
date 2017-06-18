@@ -2,7 +2,7 @@
     {
         "title": "Mow the lawn",
         "project": "House Chores",
-        "elapsed": 5519917,
+        "elapsed": 91700,
         "id": "0a4a79cb-b06d-4cb1-883d-549a1e3b66d7",
         "runningSince": null
     },
@@ -10,21 +10,21 @@
         "title": "Ponder origins of universe",
         "project": "Life Chores",
         "id": "2c43306e-5b44-4ff8-8753-33c35adbd06f",
-        "elapsed": 41556942469,
+        "elapsed": 2469987,
         "runningSince": null
     },
     {
-        "title": "TARZAN",
-        "project": "SUMA",
+        "title": "Write tests",
+        "project": "Work Chores",
         "id": "abe19f30-a5b6-4860-b4a1-03e81ecf96c4",
-        "elapsed": 0,
-        "runningSince": 1497155192560
+        "elapsed": 781898968,
+        "runningSince": null
     },
     {
-        "title": "BIMBARLA",
-        "project": "HELLO",
-        "id": "b1182199-c158-4e71-93e9-042ce06cee03",
+        "title": "Timer",
+        "project": "Project",
+        "id": "973db110-e00f-421a-8bbd-98fe5f29058b",
         "elapsed": 0,
-        "runningSince": 1497155209718
+        "runningSince": null
     }
 ]
